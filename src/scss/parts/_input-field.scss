@@ -1,0 +1,40 @@
+.input-field{
+	position: relative;
+	
+	& input{
+		&[type="text"], 
+		&[type="password"],
+		&[type="email"],
+		&[type="number"]
+		{
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+			padding: 6px 0;
+			border: 0;
+			border-bottom: 1px solid #777;
+			padding-top: 20px;
+			font-size: 18px;
+			background: transparent;
+			
+			& + label{
+				pointer-events: none;
+				position: absolute;
+				top: 18px;
+				left: 0px;
+				line-height: 16px;
+				transition: top .2s, font-size .2s;
+			}
+
+			&:focus, &.nempty{
+				outline: none;
+
+				& + label{
+					font-size: 10px;
+					top: 2px;
+					left: 0;
+				}
+			}
+		}
+	}
+}

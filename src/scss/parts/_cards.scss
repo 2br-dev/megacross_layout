@@ -1,0 +1,114 @@
+.card{
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #fff;
+	display: inline-flex;
+	flex-direction: column;
+	transition: box-shadow .4s, transform .4s;
+	margin-left: 20px;
+	width: calc(25% - 20px);
+	box-sizing: border-box;
+	position: relative;
+
+	& p{
+		margin: 10px 0;
+	}
+
+	&.in-cart{
+
+		& .photo{
+
+			&:after{
+				content: '';
+				position: absolute;
+				border: 8px solid $accent;
+				display: block;
+				width: 0;
+				height: 0;
+				border-bottom-color: transparent;
+				border-right-color: transparent;
+				left: 0px;
+				top: 0px;
+			}
+		}
+	}
+
+	@media(max-width:1600px){
+		width: calc(33% - 20px);
+	}
+
+	@media(max-width: 1300px){
+		width: calc(50% - 10px);
+		margin-left: 0;
+	}
+
+	@media(max-width: 700px){
+		width: 100%;
+		margin-left: 0;
+	}
+
+	&:hover{
+		box-shadow: 0 8px 12px rgba(black, .7);
+		transform: translateZ(60px);
+	}
+
+	& .photo{
+		padding-top: 65%;
+		display: block;
+		background-size: contain;
+
+		&[data-src=""]{
+			// background-image: url(../img/bike-empty.png);
+			background-image: url(../img/photostub/nophoto.svg);
+		}
+	}
+
+	& a{
+		color: $text;
+		text-decoration: none;
+
+		&:hover{
+			color: $accent;
+		}
+	}
+
+	& .name{
+		font-weight: 800;
+		font-size: 24px;
+
+		@media (min-width: 500px) and (max-width: 800px){
+			font-size: 16px;
+		}
+	}
+
+	& .spacer{
+		flex-grow: 1;
+	}
+
+	& .bottom-block{
+
+		display: flex;
+
+		& .left{
+			flex-grow: 1;
+			font-size: 24px;
+			font-weight: 800;
+		}
+
+		& .right{
+
+			& .buy-icon{
+				display: block;
+				width: 24px;
+				height: 24px;
+				background: url(../img/buy-icon.svg) center center no-repeat;
+				background-size: contain;
+				transition: transform .2s;
+
+				&:hover{
+					transform: scale(1.4);
+				}
+			}
+		}
+	}
+}

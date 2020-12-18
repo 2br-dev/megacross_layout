@@ -1,0 +1,99 @@
+.modal{
+	position: relative;
+	// position: fixed;
+	// top: 0;
+	z-index: 2000;
+	background: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	transition: transform .4s, opacity .4s;
+	transform: translateY(80px);
+	pointer-events: none;
+	opacity: 0;
+	
+	&.opened{
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: all;
+	}
+
+	& a:not(.btn){
+		color: $accent;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	& .close-trigger{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 5px;
+		right: 5px;
+		background: url(../img/close.svg) center center no-repeat;
+		transition: transform .4s;
+
+		&:hover{
+			transform: rotate(180deg);
+		}
+	}
+
+	& .modal-header{
+		font-family: 'Capture it';
+		font-size: 24px;
+	}
+
+	& .row{
+		margin: 20px 0;
+	}
+
+	&#login{
+		width: 600px;
+		height: 250px;
+		
+		left: calc(50% - 300px);
+		top: calc(50% - 125px);
+	}
+	
+	&#forgot{
+		width: 600px;
+		height: 206px;
+		left: calc(50% - 300px);
+		top: calc(50% - 103px);
+
+	}
+	
+	&#register{
+		width: 600px;
+		left: calc(50% - 300px);
+		top: calc(50% - 266px);
+
+		& .ur-data{
+			&.hidden{
+				display: none;
+			}
+		}
+	}
+} 
+
+.shadow{
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(black, .7);
+	z-index: 1999;
+	transition: opacity .4s;
+	opacity: 0;
+	pointer-events: none;
+
+	&.opened{
+		opacity: 1;
+		pointer-events: all;
+	}
+}

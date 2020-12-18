@@ -1,0 +1,185 @@
+#profile{
+
+	& .profile-wrapper{
+		margin-bottom: 40px;
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: 1.2fr .8fr;
+
+		@media(max-width: 1200px){
+			display: block;
+
+			& > *{
+				margin-bottom: 20px;
+			}
+		}
+
+		& .profile-block{
+
+			padding: 20px;
+			background: #fff;
+
+			& .profile-block-header{
+				text-transform: uppercase;
+				font-size: 36px;
+				margin-bottom: 20px;
+			}
+
+			& .profile-block-body{
+				height: calc(100% - 20px);
+			}
+
+			&#personal-data{
+
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+
+				& .profile-flex{
+
+					display: flex;
+					flex-wrap: wrap;
+
+					& .avatar-wrapper{
+
+						width: 70px;
+
+						& .avatar{
+							background-color: #ccc;
+							width: 50px;
+							height: 50px;
+							border-radius: 50%;
+						}
+					}
+
+					& .data-wrapper{
+
+						& .name{
+							font-weight: 700;
+							font-size: 18px;
+						}
+					}
+
+					& .bottom{
+						display: flex;
+						margin-top: 30px;
+
+						& .left{
+							flex-grow: 1;
+						}
+
+						& a{
+							text-decoration: none;
+
+							&:not(:last-of-type){
+								margin-right: 20px;
+							}
+						}
+					}
+
+					& .bottom{
+						width: 100%;
+					}
+				}
+			}
+
+			&#orders{
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+
+				& .order-list{
+					width: 100%;
+					border-spacing: 0;
+					border-collapse: collapse;
+
+					& > tbody{
+
+						& > tr:not(.nested){
+							cursor: pointer;
+	
+							&:hover{
+								background: rgba($text, .1);
+							}
+
+							& > td{
+								white-space: nowrap;
+
+								@media(max-width: 600px){
+
+									&:nth-child(2){
+										display: none;
+									}
+
+									&:nth-child(3){
+										display: none;
+									}
+								}
+							}
+						}
+					}
+
+					
+					& td{
+						border-bottom: 1px solid rgba($text, .2);
+						border-top: 1px solid rgba($text, .2);
+						line-height: 40px;
+
+						&:last-of-type{
+							padding-top: 10px;
+						}
+					}
+
+					& a{
+						text-decoration: none;
+						color: $accent;
+					}
+
+					& .nested{
+
+						& > td{
+							
+							padding: 0;
+
+							& .nested-wrapper{
+
+								max-height: 0;
+								overflow: hidden;
+								border-left: 3px solid $fogged;
+								padding-left: 10px;
+
+								& table{
+									width: 100%;
+									border-spacing: 0;
+									border-collapse: collapse;
+									width: 100%;
+
+									& th{
+										text-align: left;
+										font-size: 10px;
+										text-transform: uppercase;
+									}
+
+									& td{
+										padding: initial;
+									}
+								}
+							}
+						}
+
+						&.expanded{
+
+							& > td .nested-wrapper{
+								max-height: 2000px;
+							}
+						}
+
+					}
+				}
+			}
+
+			&#support{
+				border: 1px solid violet;
+				grid-row: 1 / 3;
+			}
+		}
+	}
+}

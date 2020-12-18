@@ -1,0 +1,31 @@
+@import './parts/vars';
+@import './parts/helpers';
+@import './parts/nav';
+@import './parts/megamenu'; // Старая менюшка
+@import './parts/mega-menu'; // Новая менюшка
+@import './parts/layout'; 
+@import './parts/footer';
+@import './parts/input-field';
+@import './parts/modal';
+@import './parts/breadcrumbs';
+@import './parts/nouislider';
+@import './parts/pagination';
+@import './parts/floating-cart';
+@import './parts/fonts';
+@import './parts/tabs-control';
+@import './parts/cards';
+
+@import './parts/pages/main';
+@import './parts/pages/catalog';
+@import './parts/pages/product';
+@import './parts/pages/profile';
+@import './parts/pages/confirm';
+
+// Совмещенная корзина
+@import './parts/pages/checkout';
+
+// Только оформление заказа
+@import './parts/pages/checkout_clear';
+
+// Только содержимое корзины
+@import './parts/pages/cart';

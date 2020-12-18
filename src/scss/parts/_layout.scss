@@ -1,0 +1,104 @@
+.col{
+	padding: 0 10px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100vw;
+	box-sizing: border-box;
+    margin: 60px 0;
+    
+    @media(max-width: 900px){
+        margin: 30px 0;
+    }
+
+
+    & .col{
+
+        max-width: 100%;       
+        box-sizing: border-box;
+
+        @for $i from 0 to ($columns + 1) {
+
+            @media(min-width: 200px) and (max-width: 700px){
+                &.xs#{$i}{
+                    width: #{(100% / $columns) * $i};
+                    max-width: #{(100% / $columns) * $i};
+                }
+            }
+
+            @media(min-width: 700px) and (max-width: 1000px){
+                &.s#{$i}{
+                    width: #{(100% / $columns) * $i};
+                    max-width: #{(100% / $columns) * $i};
+                }
+            }
+
+            @media(min-width: 1000px) and (max-width: 1400px){
+                &.m#{$i}{
+                    width: #{(100% / $columns) * $i};
+                    max-width: #{(100% / $columns) * $i};
+                }
+            }
+
+            @media(min-width: 1400px) and (max-width: 2000px){
+                &.l#{$i}{
+                    width: #{(100% / $columns) * $i};
+                }
+            }
+
+            @media(min-width: 2000px){
+                &.xl#{$i}{
+                    width: #{(100% / $columns) * $i};
+                }
+            }
+        }
+    }
+}
+
+.container{
+    max-width: 1900px;
+    margin: auto;
+
+    @media(min-width: 1200px){
+        padding: 0 30px;
+    }
+}
+
+.valign{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+   
+    &.bottom{
+        &:before{
+            content: '';
+            flex-grow: 1;
+        }
+    }
+
+    &.center{
+        &:before, &:after{
+            content: '';
+            flex-grow: 1;
+        }
+    }
+}
+
+.align-left{
+    text-align: left;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.center{
+    margin: auto;
+}

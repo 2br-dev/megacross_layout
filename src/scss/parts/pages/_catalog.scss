@@ -1,0 +1,507 @@
+#products-wrapper{
+
+	& .row{
+		@media(max-width: 1200px){
+			margin-top: 20px;
+		}
+	}
+	
+	& > .container{
+		padding: 20px;
+		box-sizing: border-box;
+
+		& .filters-trigger{
+			@media(min-width: 1200px){
+				display: none;
+			}
+		}
+
+		& .sidebar{
+			width: 300px;
+			padding-right: 20px;
+
+			& #categories{
+
+				& .category{
+					display: block;
+					color: $text;
+					text-decoration: none;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					line-height: 40px;
+					width: 80%;
+					box-sizing: border-box;
+					transition: padding-left .2s, background-color .2s;
+					position: relative;
+
+					&:hover{
+						background: #fff;
+						padding-left: 20px;
+					}
+					
+					&:after{
+						content:'';
+						display: block;
+						border-bottom: 1px solid rgba($text, .3);
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+					}
+				}
+			}
+
+			@media(max-width: 1200px){
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: #fff;
+				z-index: 200;
+				padding: 20px;
+				box-sizing: border-box;
+				overflow-x: hidden;
+				overflow-y: auto;
+				height: 100vh;
+				transition: left .4s;
+				left: -300px;
+
+				&.active{
+					left: 0;
+				}
+			}
+
+			.slider{
+				width: 100%;
+			}
+
+			& .filters-header{
+				font-weight: 800;
+				text-transform: uppercase;
+				
+				&:after{
+					margin-top: 4px;
+					margin-bottom: 10px;
+					content: '';
+					display: block;
+					height: 1px;
+					background: linear-gradient(to left, $fogged 40%, transparent 40%);
+					background-size: 4px auto;
+				}
+			}
+
+			& .filters-block{
+
+				margin-bottom: 40px;
+				display: flex;
+				flex-wrap: wrap;
+
+				& label{
+					display: block;
+					margin-bottom: 10px;
+					width: 100%;
+					flex-grow: 1;
+				}
+
+				& .input-field{
+					flex-grow: 1;
+					padding-right: 20px;
+				}
+
+				&.columns{
+
+					& label, & .input-field{
+						width: 40%;
+					}
+				}
+			}
+
+			& input[type="checkbox"]{
+				&.colorcheck{
+					display: none;
+
+					& + label{
+						cursor: pointer;
+						display: inline-block;
+						width: 40px;
+						height: 30px;
+						margin-right: 15px;
+						flex-shrink: 0;
+						flex-grow: 0;
+						display: flex;
+						transform: skewx(-20deg);
+						box-shadow: 2px 4px 8px rgba(black, .7) inset;
+						transition: box-shadow .4s;
+						position: relative;
+
+						& .color{
+							width: 1px;
+							flex-grow: 1;
+							mix-blend-mode: multiply;
+						}
+					}
+
+					&.w + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: #fff;
+						}
+					}
+
+					&.g + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: green;
+						}
+					}
+
+					&.b + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: blue;
+						}
+					}
+
+					&.o + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: orange;
+						}
+					}
+
+					&.bl + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: lighten(black, 30);
+						}
+					}
+
+					&.r + label .color{
+						display: none;
+
+						&:first-of-type{
+							display: block;
+							background: red;
+						}
+					}
+
+					&.wo + label .color{
+						display: none;
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: orange;
+						}
+					}
+
+					&.wr + label .color{
+						display: none;
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: red;
+						}
+					}
+
+					&.wob + label .color{
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: orange;
+						}
+
+						&:nth-child(3){
+							display: block;
+							background: blue;
+						}
+					}
+
+					&.wobl + label .color{
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: orange;
+						}
+
+						&:nth-child(3){
+							display: block;
+							background: black;
+						}
+					}
+
+					&.wrb + label .color{
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: red;
+						}
+
+						&:nth-child(3){
+							display: block;
+							background: blue;
+						}
+					}
+
+					&.wrbl + label .color{
+
+						&:nth-child(1){
+							display: block;
+							background: white;
+						}
+
+						&:nth-child(2){
+							display: block;
+							background: red;
+						}
+
+						&:nth-child(3){
+							display: block;
+							background: lighten(black, 30);
+						}
+					}
+
+					&:checked + label{
+						box-shadow: 0 0 0 8px black inset;
+					}
+				}
+			}
+		}
+
+		& .mode-wrapper{
+			padding: 0 0 10px 0;
+			
+			& a{
+				color: $accent;
+				text-decoration: none;
+
+				&.change-view{
+
+					&.list{
+
+						&:after{
+							content: '';
+							margin-left: 6px;
+							padding-left: 22px;
+							background: url(../img/list-view.svg) center center no-repeat;
+						}
+					}
+
+					&.cards{
+	
+						&:after{
+							content: '';
+							margin-left: 6px;
+							padding-left: 22px;
+							background: url(../img/cards-view.svg) center center no-repeat;
+						}
+					}
+				}
+			}
+
+			& .filters-trigger{
+				padding-left: 22px;
+				background: url(../img/filters-trigger.svg) center center no-repeat;
+				margin-left: 20px;
+			}
+		}
+
+		
+
+		& .product-list{
+			width: calc(100% - 320px);
+			flex-grow: 1;
+			
+			& .products{
+				display: flex;
+				flex-wrap: wrap;
+
+				@media(max-width: 1300px){
+					justify-content: space-between;
+				}
+
+				&.list{
+
+					display: table;
+					width: 100%;
+					max-width: 100%;
+					border-collapse: collapse;
+
+					& .card{
+						display: table-row;
+						cursor: pointer;
+						transition: background-color .2s, box-shadow .2s;
+						background: transparent;
+						
+						& *{
+							font-size: 16px;
+							font-weight: normal;
+						}
+
+						& > * {
+							white-space: nowrap;
+						}
+
+						& .photo{
+							display: inline-block;
+							width: 30px;
+							height: 30px;
+							border-radius: 50%;
+							transform: translateY(10px);
+							padding-top: 0;
+							background-size: contain;
+							background-color: #fff;
+
+							&:after{
+								top: -10px;
+								left: -10px;
+							}
+						}
+
+						&:hover{
+							background: lighten($fogged, 25);
+							box-shadow: 0 0 8px rgba(black, .3);
+						}
+
+						& > *{
+							display: table-cell;
+							border-top: 1px solid $fogged;
+							border-bottom: 1px solid $fogged;
+
+							&:first-of-type{
+								padding-left: 10px;
+							}
+						}
+
+						& .name{
+							& p, a{
+								font-weight: bold;
+							}
+						}
+
+						@media(max-width: 1300px){
+							.remains{
+								display: none;
+							}
+						}
+
+						@media(max-width: 1100px){
+							.article{
+								display: none;
+							} 
+						}
+
+						@media(max-width: 900px){
+							.remains{
+								display: none;
+							}
+						}
+
+						@media(max-width: 600px){
+							.name{
+								white-space: normal;
+								padding: 0 20px;
+
+								@media(max-width: 400px){
+									padding: 0 10px;
+								}
+							}
+						}
+
+						@media(max-width: 400px){
+							display: flex;
+							flex-wrap: wrap;
+							border-top: 1px solid $text;
+							padding: 20px 0;
+
+							&:last-of-type{
+								border-bottom: 1px solid $text;
+							}
+
+							& .photo{
+								display: none;
+							}
+
+							& .name p{
+								width: 100%;
+								max-width: 270px;
+								overflow: hidden;
+								text-overflow: ellipsis;
+							}
+
+							& > *{
+								border: 0;
+							}
+
+							& .bottom-block{
+
+								display: flex;
+								width: 100%;
+								padding: 0 10px;
+
+								& .left{
+									flex-grow: 1;
+								}
+							}
+						}
+
+						& .bottom-block{
+
+							& * {
+								display: inline-block;
+							}
+
+							& .buy-icon{
+								display: block;
+								width: 24px;
+								height: 24px;
+								background: url(../img/buy-icon.svg) center center no-repeat;
+								background-size: contain;
+								transition: transform .2s;
+								transform: translateY(5px);
+			
+								&:hover{
+									transform: scale(1.4) translateY(5px);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

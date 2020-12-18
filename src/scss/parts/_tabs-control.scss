@@ -1,0 +1,45 @@
+.tabs-control{
+
+	width: 100%;
+
+	& .tabs-header{
+
+		border-bottom: 1px solid $text;
+
+		& .tab-link{
+			padding: 3px 0;
+			margin-right: 20px;
+			display: inline-block;
+			text-decoration: none;
+			transform: translateY(2px);
+			text-transform: uppercase;
+			color: $text;
+			font-weight: 800;
+
+			&.active{
+				border-bottom: 4px solid $accent;
+				color: $accent;
+			}
+		}
+	}
+
+	& .tab-pages{
+
+		& .tab-page{
+
+			width: 0;
+			height: 0;
+			opacity: 0;
+			pointer-events: none;
+			
+			&.active{
+				padding: 20px 0;
+				display: block;
+				width: 100%;
+				height: auto;
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	}
+}

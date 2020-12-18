@@ -1,0 +1,86 @@
+@import './subscribe';
+
+footer{
+	background-color: #131313;
+	color: #fff;
+	
+	
+	& .main{
+		
+		padding: 3vw 0;
+
+		& .container{
+	
+			& .row{
+				margin: 0;
+		
+				& .footer-block-header{
+					font-family: 'Capture it';
+					font-size: 24px;
+					color: #6C6C6C;
+
+					@media(max-width: 1400px){
+						margin-top: 40px;
+					}
+				}
+		
+				& a{
+					display: block;
+					color: #fff;
+					text-decoration: none;
+					font-weight: 300;
+					opacity: .7;
+		
+					&:hover{
+						text-decoration: underline;
+					}
+		
+					&.phone{
+						font-size: 1.65vw;
+
+						@media(max-width: 1400px){
+							font-size: 24px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& .copyright{
+
+		@media(max-width: 700px){
+			& *{
+				text-align: center;
+			};
+		}
+
+		& .container{
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 20px;
+			box-sizing: border-box;
+
+			& .left{
+				flex-grow: 1;
+			}
+
+			& .right{
+				display: flex;
+				justify-content: center;
+				white-space: nowrap;
+
+				@media(max-width: 900px){
+					width: 100%;
+				}
+
+				& img{
+					margin-left: 10px;
+				}
+			}
+		}
+
+		background: #000;
+		padding: 20px 0;
+	}
+}
