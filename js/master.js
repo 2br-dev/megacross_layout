@@ -437,6 +437,7 @@ function setupEvents(){
 
 function openMenu(el, e){
 
+	// Push purpose only
 	var level;
 	
 	if(!e)
