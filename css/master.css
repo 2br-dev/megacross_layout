@@ -277,6 +277,62 @@ h1 {
   .slider.noUi-target .noUi-tooltip {
     display: none; }
 
+.mode-wrapper > * {
+  display: inline-flex;
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  justify-content: space-between;
+  margin: 0 6px; }
+  @media (max-width: 500px) {
+    .mode-wrapper > * {
+      display: flex;
+      width: 100%;
+      margin: 6px 0; } }
+  .mode-wrapper > * .dashed {
+    margin: 0 10px;
+    color: #FD481B;
+    border-bottom: 1px dotted #FD481B; }
+  .mode-wrapper > * .sort-order_direction {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    transform: translate(-10px, 4px); }
+    .mode-wrapper > * .sort-order_direction .pe-7s-angle-up {
+      background: url(../img//arrow-up.svg) center center;
+      background-size: contain;
+      display: block;
+      height: 100%; }
+    .mode-wrapper > * .sort-order_direction .pe-7s-angle-down {
+      background: url(../img//arrow-down.svg) center center;
+      background-size: contain;
+      display: block;
+      height: 100%; }
+  .mode-wrapper > * .dropdown {
+    position: relative; }
+    .mode-wrapper > * .dropdown .dropdown-menu {
+      display: none;
+      list-style: none;
+      text-align: left;
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      top: calc(100% + 4px);
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      margin: 0; }
+      .mode-wrapper > * .dropdown .dropdown-menu.open {
+        display: block;
+        padding: 0;
+        background: #fff; }
+        .mode-wrapper > * .dropdown .dropdown-menu.open li {
+          padding: 8px 14px;
+          white-space: nowrap;
+          cursor: pointer; }
+          .mode-wrapper > * .dropdown .dropdown-menu.open li:hover {
+            background-color: #EEE; }
+
 nav {
   z-index: 5;
   position: relative; }
@@ -2651,9 +2707,9 @@ footer {
         padding-left: 22px;
         background: url(../img/cards-view.svg) center center no-repeat; }
     #products-wrapper > .container .mode-wrapper .filters-trigger {
-      padding-left: 22px;
-      background: url(../img/filters-trigger.svg) center center no-repeat;
-      margin-left: 20px; }
+      padding-right: 22px;
+      box-sizing: border-box;
+      background: url(../img/filters-trigger.svg) right center no-repeat; }
   #products-wrapper > .container .product-list {
     width: calc(100% - 320px);
     flex-grow: 1; }
@@ -2880,6 +2936,9 @@ footer {
     justify-content: flex-start; }
     #product .container .info .page-product_quantity .quantity {
       height: 50px; }
+
+#product .swiper-wrapper .card {
+  height: auto; }
 
 #profile .profile-wrapper {
   margin-bottom: 40px;

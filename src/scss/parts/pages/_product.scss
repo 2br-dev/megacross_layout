@@ -1,7 +1,8 @@
 #product{
 
-	& .container{
 
+	& .container{
+		
 		& .product-slider-wrapper{
 
 			transform: rotate(-3deg);
@@ -32,6 +33,7 @@
 				}
 				
 				& .swiper-wrapper{
+
 					& .swiper-slide{
 						padding-bottom: 60%;
 						background-color: #fff;
@@ -184,6 +186,12 @@
 					height: 50px;
 				}
 			}
+		}
+	}
+	.swiper-wrapper{
+
+		& .card{
+			height: auto;
 		}
 	}
 }

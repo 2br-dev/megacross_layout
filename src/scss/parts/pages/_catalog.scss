@@ -11,18 +11,21 @@
 		box-sizing: border-box;
 
 		& .filters-trigger{
+
 			@media(min-width: 1200px){
 				display: none;
 			}
 		}
 
 		& .sidebar{
+
 			width: 300px;
 			padding-right: 20px;
 
 			& #categories{
 
 				& .category{
+
 					display: block;
 					color: $text;
 					text-decoration: none;
@@ -334,9 +337,10 @@
 			}
 
 			& .filters-trigger{
-				padding-left: 22px;
-				background: url(../img/filters-trigger.svg) center center no-repeat;
-				margin-left: 20px;
+				padding-right: 22px;
+				box-sizing: border-box;
+				background: url(../img/filters-trigger.svg) right center no-repeat;
+				// margin-left: 20px;
 			}
 		}
 
